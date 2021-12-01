@@ -1,2 +1,3 @@
-# AdventOfCode2021
-AdventOfCode2021
+
+# Advent of Code 2020
+Get started here: https://adventofcode.com/
