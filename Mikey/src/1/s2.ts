@@ -1,13 +1,7 @@
-// // this is the worst
-// export default function Solution(input: number[]){
-//     input = input.filter(x=> x < 2020).sort((a, b) => a - b);
-//     for(let i = 0; i < input.length; i++){
-//         for(let j = input.length-1; j > 0; j--){
-//             for(let q = 0; q < input.length; q++){
-//                 if(input[i] + input[j] + input[q] === 2020){
-//                     return input[i] * input[j] * input[q];
-//                 }
-//             }
-//         }
-//     }
-// }
+import Fs from "fs"
+
+export default function Solution(): number{
+    const input = Fs.readFileSync(`src/1/data.txt`).toString().split('\r\n').map(x => Number(x));    
+    let ans = input.filter((current, index, array) => array[index+1] + array[index+2] + array[index+3] > array[index] + array[index+1] + array[index+2]).length
+    return ans
+}
