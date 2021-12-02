@@ -8,7 +8,7 @@ const xmasTree = require('xmas-tree');
             color: true
         }
     ));
-    console.log(Chalk.red("Welcome to the 2020 Advent of code!"));
+    console.log(Chalk.red("Welcome to the 2021 Advent of code!"));
     
     const day = await Prompts({
         type: 'text',
