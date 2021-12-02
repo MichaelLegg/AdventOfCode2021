@@ -5,6 +5,7 @@ import (
 	"os"
 	"strconv"
 	s "strings"
+	"time"
 )
 
 func check(e error) {
@@ -45,6 +46,18 @@ func countLarger(input []int) int {
 	return count
 }
 
+type timeable func()
+
+func execAndEvalTime(title string, fn timeable) {
+	start := time.Now()
+
+	fn()
+
+	diff := time.Since(start).Seconds()
+
+	fmt.Println(title, "took", diff, "seconds")
+}
+
 func runDay1A() {
 	input := readInput("./input.txt")
 
@@ -81,6 +94,6 @@ func runDay1B() {
 }
 
 func main() {
-	runDay1A()
-	runDay1B()
+	execAndEvalTime("Part A", runDay1A)
+	execAndEvalTime("Part B", runDay1B)
 }

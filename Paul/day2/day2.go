@@ -5,6 +5,7 @@ import (
 	"os"
 	"strconv"
 	s "strings"
+	"time"
 )
 
 func check(e error) {
@@ -67,6 +68,18 @@ func partBEvalCommand(command string, currentAim int) (int, int, int) {
 	return hChange, dChange, aimChange
 }
 
+type timeable func()
+
+func execAndEvalTime(title string, fn timeable) {
+	start := time.Now()
+
+	fn()
+
+	diff := time.Since(start).Seconds()
+
+	fmt.Println(title, "took", diff, "seconds")
+}
+
 func runDay2A() {
 	hPos, depth := 0, 0
 
@@ -101,6 +114,6 @@ func runDay2B() {
 }
 
 func main() {
-	runDay2A()
-	runDay2B()
+	execAndEvalTime("Part A", runDay2A)
+	execAndEvalTime("Part B", runDay2B)
 }
