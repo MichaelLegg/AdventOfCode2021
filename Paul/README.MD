@@ -8,3 +8,4 @@ VSCode has native extensions and stuff so it's debug compatible etc too
 | --- | ----------- | ----------- |
 | 1   | 0.00016012  | 0.000152739 |
 | 2   | 0.000406135 | 0.000147939 |
+| 3   | 0.000755349 | 0.000823919 |
